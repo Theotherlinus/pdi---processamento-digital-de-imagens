@@ -1,12 +1,12 @@
-# PDI 2026.1 - Processamento Digital de Imagens
+# PDI- Processamento Digital de Imagens
 
-Este repositório contém exercícios e práticas da disciplina de **Processamento Digital de Imagens** oferecida pela Universidade Federal de São João del-Rei (UFSJ) no período 2026/1.
+Este repositório contém exercícios e práticas da disciplina de **Processamento Digital de Imagens** oferecida pela Universidade Federal de São João del-Rei (UFSJ) no período.
 
 ## Estrutura do Repositório
 
 - **`aulas/`**: Materiais e códigos relacionados às aulas da disciplina.
-- **`ex_resolvidos 2025.2/`**: Exercícios resolvidos do período anterior (2025/2), incluindo arquivos MATLAB (.m) para exercícios e práticas.
-- **`ex_resolvidos 2026.1/`**:
+- **`ex_resolvidos antigos/`**: Exercícios resolvidos do período anterior, incluindo arquivos MATLAB (.m) para exercícios e práticas.
+- **`ex_resolvidos atuais/`**:
   - **`exercicios/`**: Pasta com exercícios propostos e resolvidos.
     - **`Exercicio01/`**: Exemplos de códigos para a primeira aula.
     - **`Exercicio02/`**: (Em desenvolvimento)
