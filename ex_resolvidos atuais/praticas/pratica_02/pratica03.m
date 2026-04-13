@@ -6,6 +6,11 @@ close all;
 clc;
 
 base_dir = 'medicas';
+saida_dir = 'resultados_pratica03';
+
+if exist(saida_dir, 'dir') ~= 7
+    mkdir(saida_dir);
+end
 
 arquivos = {
     'mamografia6.png', ...
@@ -80,6 +85,16 @@ for i = 1:length(arquivos)
     subplot(2, 3, 5); imshow(img_agucada, []); title(titulo_aguc);
     subplot(2, 3, 6); imshow(img_sobel, []); title('Sobel (bordas)');
 
+    [~, nome_base, ~] = fileparts(arquivos{i});
+    prefixo = sprintf('%02d_%s', i, nome_base);
+
+    imwrite(img_cinza, fullfile(saida_dir, [prefixo '_01_original.png']));
+    imwrite(img_media, fullfile(saida_dir, [prefixo '_02_media.png']));
+    imwrite(img_mediana, fullfile(saida_dir, [prefixo '_03_mediana.png']));
+    imwrite(img_laplaciano, fullfile(saida_dir, [prefixo '_04_laplaciano.png']));
+    imwrite(img_agucada, fullfile(saida_dir, [prefixo '_05_agucamento.png']));
+    imwrite(img_sobel, fullfile(saida_dir, [prefixo '_06_sobel.png']));
+
     variancia_original = var(img_cinza(:));
     variancia_media = var(img_media(:));
     variancia_mediana = var(img_mediana(:));
@@ -91,6 +106,8 @@ for i = 1:length(arquivos)
     fprintf('Variância pós-mediana: %.6f\n', variancia_mediana);
     fprintf('Energia média de bordas (Sobel): %.6f\n', energia_bordas);
 end
+
+fprintf('\nImagens salvas em: %s\n', saida_dir);
 
 fprintf('\nResumo esperado da análise visual:\n');
 fprintf('- Média: reduz ruído, mas tende a borrar bordas.\n');
