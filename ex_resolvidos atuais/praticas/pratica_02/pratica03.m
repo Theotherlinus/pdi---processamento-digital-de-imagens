@@ -114,3 +114,33 @@ fprintf('- Média: reduz ruído, mas tende a borrar bordas.\n');
 fprintf('- Mediana: melhor para ruído impulsivo, preserva melhor contornos.\n');
 fprintf('- Laplaciano: destaca variações rápidas de intensidade.\n');
 fprintf('- Sobel: evidencia bordas e estruturas anatômicas.\n');
+
+fprintf('\n=== FASE 3: ANÁLISE COMPARATIVA (RESPOSTAS) ===\n');
+
+fprintf('\nPergunta 1: O ruído foi reduzido adequadamente?\n');
+fprintf('1) Mamografia: Sim, houve redução moderada de granulação sem descaracterizar a estrutura geral.\n');
+fprintf('2) Tomografia: Sim, o ruído foi atenuado principalmente com mediana, com resultado visual mais limpo.\n');
+fprintf('3) Ressonância (Cérebro): Sim, a suavização reduziu flutuações de intensidade em regiões homogêneas.\n');
+fprintf('4) Raio-X (Fratura): Parcialmente, pois a imagem original já apresentava baixo ruído.\n');
+fprintf('5) Imagem com Ruído: Sim, de forma clara; a mediana foi a que melhor removeu o ruído impulsivo.\n');
+
+fprintf('\nPergunta 2: As bordas importantes foram preservadas?\n');
+fprintf('1) Mamografia: Sim, as bordas principais foram preservadas, embora com leve suavização na média.\n');
+fprintf('2) Tomografia: Parcialmente, contornos centrais se mantiveram, mas bordas finas perderam contraste.\n');
+fprintf('3) Ressonância (Cérebro): Sim, as fronteiras anatômicas ficaram bem destacadas com Sobel.\n');
+fprintf('4) Raio-X (Fratura): Parcialmente, o Sobel preserva as linhas mais fortes, mas estruturas sutis ficam menos nítidas.\n');
+fprintf('5) Imagem com Ruído: Sim, após a mediana as bordas relevantes continuaram visíveis e mais estáveis.\n');
+
+fprintf('\nPergunta 3: Houve perda de detalhes relevantes?\n');
+fprintf('1) Mamografia: Houve perda leve de microdetalhes com média; mediana preservou melhor.\n');
+fprintf('2) Tomografia: Houve perda leve a moderada em texturas finas nas regiões mais homogêneas.\n');
+fprintf('3) Ressonância (Cérebro): Sim, a média removeu alguns detalhes finos; mediana manteve melhor definição.\n');
+fprintf('4) Raio-X (Fratura): Perda baixa, mantendo os elementos principais para interpretação visual.\n');
+fprintf('5) Imagem com Ruído: Houve perda moderada na média, mas a mediana apresentou melhor equilíbrio.\n');
+
+fprintf('\nPergunta 4: A imagem ficou mais adequada para diagnóstico?\n');
+fprintf('1) Mamografia: Sim, a imagem tratada ficou mais limpa para inspeção geral.\n');
+fprintf('2) Tomografia: Sim, principalmente com mediana + sobel para apoiar leitura de contornos.\n');
+fprintf('3) Ressonância (Cérebro): Sim, o pré-processamento melhorou contraste de estruturas sem comprometer a análise global.\n');
+fprintf('4) Raio-X (Fratura): Parcialmente, útil para visualização geral, mas sempre comparando com a original.\n');
+fprintf('5) Imagem com Ruído: Sim, foi a que mais ganhou qualidade diagnóstica após o processamento.\n');
